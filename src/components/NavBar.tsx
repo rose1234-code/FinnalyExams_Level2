@@ -7,6 +7,14 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { ModeToggle } from './ModeToggle';
 import { useStoreCard } from '@/store/card.store';
 
+import {
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from '@clerk/nextjs'
+
 export default function NavBar() {
 
   const {selectedCardIds}=useStoreCard()
@@ -25,7 +33,7 @@ export default function NavBar() {
   }
 }, [])
   return (
-    <div className={` ${scrolled? 'px-7 lg:px-0 w-[90%] md:w-[60%] left-3 lg:left-80 h-[80 px] md:h-[67px] rounded-full':'w-full'} dark:bg-black flex transition duration-300 fixed left-0 px-2 lg:px-20 z-100 backdrop-blur-4xl bg-[#578f7c] text-black items-center justify-between  `}>
+    <div className={` ${scrolled? ' w-[96%] md:w-[60%] left-3 lg:left-80 h-[80 px] md:h-[67px] rounded-full':'w-full'} dark:bg-black flex transition duration-300 fixed left-0 px-2 lg:px-5 z-100 backdrop-blur-4xl bg-[#578f7c] text-black items-center justify-between  `}>
         {/* first part */}
       <div className='flex items-center gap-1  '>
         <h1 className='text-4xl font-semibold text-white'>Furni</h1>
@@ -62,6 +70,30 @@ export default function NavBar() {
               <ModeToggle/>
             </div>
         </Link>
+
+        {/* button of connexion */}
+        {/* Auth buttons - Desktop */}
+        <div className="hidden lg:flex items-center gap-3">
+          <SignedOut>
+            <SignInButton mode="modal">
+              <button className="px-4 py-1.5 rounded-full border border-white text-white hover:bg-white hover:text-black transition">
+                Sign in
+              </button>
+            </SignInButton>
+          
+            <SignUpButton mode="modal">
+              <button className="px-4 py-1.5 rounded-full bg-amber-600 text-white hover:bg-amber-700 transition">
+                Sign up
+              </button>
+            </SignUpButton>
+          </SignedOut>
+          
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
+        </div>
+
+
       </div>
       {/* visible on mobile */}
       <div className='lg:hidden flex items-center gap-6'>
