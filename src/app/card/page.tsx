@@ -2,7 +2,7 @@
 
 import AddCard from '@/components/AddCard'
 import Footer from '@/components/Footer'
-import NavBar from '@/components/NavBar'
+import Head from '@/components/Head'
 import { useStoreCard } from '@/store/card.store'
 import { X } from 'lucide-react'
 import Link from 'next/link'
@@ -70,7 +70,7 @@ export default function page() {
 
   return (
     <div>
-        <NavBar/>                             
+        <Head/>                             
 
         {/* head of description */}
         

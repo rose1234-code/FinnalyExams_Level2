@@ -39,7 +39,7 @@ export default function NavBar() {
             <ul className='flex items-center text-[#e8e5e5] text-xl gap-10'>
 
                 <li className='bg-white text-gray-500  hover:border px-2 py-1 rounded-md'>
-                   <Link href="#">Home</Link> 
+                   <Link href="/">Home</Link> 
                 </li>
                 <li className='hover:border px-2 py-1 rounded-md'>
                    <Link href="#">About us</Link> 
