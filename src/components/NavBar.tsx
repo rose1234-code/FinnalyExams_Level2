@@ -5,8 +5,11 @@ import React, { useEffect, useState } from 'react'
 import { User,ShoppingCart } from 'lucide-react';
 import { RxHamburgerMenu } from "react-icons/rx";
 import { ModeToggle } from './ModeToggle';
+import { useStoreCard } from '@/store/card.store';
 
 export default function NavBar() {
+
+  const {selectedCardIds}=useStoreCard()
 
    const [scrolled,setScrolled]=useState(false)
 
@@ -51,14 +54,14 @@ export default function NavBar() {
             </ul>
         </div>
         {/* two */}
-        <div className='flex items-center gap-7 relative'>
+        <Link href="/card" className='flex items-center gap-7 relative'>
             <User color='white' size={35}/>
             <ShoppingCart color='white' size={35} />
-            <span className='absolute bg-[#EF4444] p-2 flex-1 text-xl right-14  -top-6 flex items-center justify-center w-7 h-7 text-white rounded-full'>10</span>
+            <span className='absolute bg-[#EF4444] p-2 flex-1 text-xl right-14  -top-6 flex items-center justify-center w-7 h-7 text-white rounded-full'>{selectedCardIds.length}</span>
             <div>
               <ModeToggle/>
             </div>
-        </div>
+        </Link>
       </div>
       {/* visible on mobile */}
       <div className='lg:hidden flex items-center gap-6'>

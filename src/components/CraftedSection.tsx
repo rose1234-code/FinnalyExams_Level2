@@ -1,6 +1,25 @@
+'use client'
+
+import { useStoreCard } from '@/store/card.store'
 import React from 'react'
 
 export default function CraftedSection() {
+
+  const listProduct=[
+    {
+      id:1,
+      image:'chair1.png'
+    },
+    {
+      id:2,
+      image:'tof.png'
+    },
+    {
+      id:3,
+      image:"chair3.png"
+    }
+  ]
+  const {toggleCardIcon,selectedCardIds}=useStoreCard()
   return (
     <div className='mt-20 pt-10 w-full px-2  lg:px-34 grid grid-cols-1 lg:grid-cols-4'>
       {/* one */}
@@ -17,25 +36,27 @@ export default function CraftedSection() {
         <img src="/Rectangle.png"/>
 
         <div className='absolute -top-10'>
-            <img src="/chair1.png" alt="" />
+            <img   src={`${listProduct[0].image}`} alt="" />
         </div>
 
-        <span className='absolute bottom-0 text-3xl  p-2 w-10 h-10 flex items-center justify-center rounded-full bg-[rgba(47,47,47,1)]  text-white bg'>+</span>
+        <span onClick={()=>toggleCardIcon(listProduct[0].id)} className={` ${selectedCardIds.includes(listProduct[0].id)&& 'bg-amber-500'}    absolute bottom-0 text-3xl  p-2 w-10 h-10 flex items-center justify-center rounded-full bg-[rgba(47,47,47,1)]  text-white bg`}>+</span>
       </div>
       {/* three */}
       <div className=' relative w-[90%] transition duration-300 transform hover:scale-105 hover:bg-gray-200 hover:rounded-md hover:shadow-2xl flex mt-10 lg:mt-0 ml-6 lg:ml-0 items-center justify-center  '>
-        <img src="tof.png" alt='none'/>
-        <div className='absolute -bottom-14 lg-bottom-4  w-full'>
+        <img src={`${listProduct[1].image}`} alt='none'/>
+        <div className='absolute -bottom-4 lg-bottom-4  w-full'>
             <h1 className='text-[#8c8a8a] w-full text-center  text-md font-semibold'>Kruzo Chair</h1>
             <h1 className='text-[rgba(47,47,47,1)] w-full text-center text-xl font-semibold'>$78.00</h1>
+            <span onClick={()=>toggleCardIcon(listProduct[1].id)} className={` ${selectedCardIds.includes(listProduct[1].id)&& 'bg-amber-500'}   absolute bottom-0 text-3xl right-20  w-9 h-9 flex items-center justify-center rounded-full bg-[rgba(47,47,47,1)]  text-white`}>+</span>
         </div>
       </div>
       {/* four */}
       <div className=' relative w-[90%] flex transition duration-300 transform hover:scale-105 hover:bg-gray-200 hover:rounded-md hover:shadow-2xl items-center mt-24 lg:mt-0 justify-center'>
-        <img src="chair3.png" alt='none' />
+        <img src={`${listProduct[2].image}`} alt='none' />
         <div className='absolute lg:bottom-0  -bottom-14  w-full'>
             <h1 className='text-[#8c8a8a]  text-center text-md font-semibold'>Ergonomic Chair</h1>
             <h1 className='text-[rgba(47,47,47,1)] text-center text-xl font-semibold'>$43.00</h1>
+            <span onClick={()=>toggleCardIcon(listProduct[2].id)} className={` ${selectedCardIds.includes(listProduct[2].id) && 'bg-amber-500'}   absolute bottom-0 text-3xl right-20  w-9 h-9 flex items-center justify-center rounded-full bg-[rgba(47,47,47,1)]  text-white`}>+</span>
         </div>
       </div>
     </div>        
