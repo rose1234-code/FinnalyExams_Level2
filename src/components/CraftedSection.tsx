@@ -23,7 +23,7 @@ export default function CraftedSection() {
   return (
     <div className='mt-20 pt-10 w-full px-2  lg:px-34 grid grid-cols-1 lg:grid-cols-4'>
       {/* one */}
-      <div className='space-y-5 lg:space-y-10 w-full lg:w-[90%] hover:shadow-2xl hover:bg-gray-200 hover:py-2 hover:px-5 hover:rounded-lg shadow '>
+      <div className='space-y-5 px-4 py-3 lg:space-y-10 w-full lg:w-[90%] hover:shadow-2xl hover:bg-gray-200 hover:py-2 hover:px-5 hover:rounded-lg shadow '>
         <h1 className=' text-3xl lg:text-4xl font-semibold flex flex-wrap text-[rgba(47,47,47,1)]'>Crafted with excellent  material.</h1>
         <p className='text-[rgba(106,106,106,1)]'>Donec mattis porta eros, aliquet <br /> finibus risus interdum at. Nulla <br /> vivethe
              as it was for us to know <br /> what was to be done.
