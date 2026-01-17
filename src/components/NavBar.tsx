@@ -66,10 +66,10 @@ export default function NavBar() {
       {/* visible on mobile */}
       <div className='lg:hidden flex items-center gap-6'>
         <RxHamburgerMenu color='white'  size={30} />
-        <span className='absolute bg-[#EF4444] p-2 flex-1 text-xl right-1  -top-5 flex items-center justify-center w-7 h-7 text-white rounded-full'>10</span>
-        <div>
+        <span className='absolute bg-[#EF4444] p-2 flex-1 text-xl right-1  -top-5 flex items-center justify-center w-7 h-7 text-white rounded-full'>{selectedCardIds.length}</span>
+        <Link href="/card">
           <ShoppingCart color='white' size={35} />
-        </div>
+        </Link>
       </div>
       
     </div>
