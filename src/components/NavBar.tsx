@@ -33,7 +33,7 @@ export default function NavBar() {
   }
 }, [])
   return (
-    <div className={` ${scrolled? ' w-[96%] md:w-[60%] left-3 lg:left-80 h-[80 px] md:h-[67px] rounded-full':'w-full'} dark:bg-black flex transition duration-300 fixed left-0 px-2 lg:px-5 z-100 backdrop-blur-4xl bg-[#578f7c] text-black items-center justify-between  `}>
+    <div className={` ${scrolled? ' w-[96%] lg:w-[85%] left-3 lg:left-30 px-4 h-14 md:h-[67px] rounded-full':'w-full'} dark:bg-black flex transition duration-300 fixed left-0 px-2 lg:px-5 z-100 backdrop-blur-4xl bg-[#578f7c] text-black items-center justify-between  `}>
         {/* first part */}
       <div className='flex items-center gap-1  '>
         <h1 className='text-4xl font-semibold text-white'>Furni</h1>
@@ -41,10 +41,10 @@ export default function NavBar() {
       </div>
 
       {/* second part */}
-      <div className='hidden lg:flex items-center gap-16  '>
+      <div className='hidden lg:flex items-center gap-14  '>
         {/* one */}
         <div>
-            <ul className='flex items-center text-[#e8e5e5] text-xl gap-10'>
+            <ul className='flex items-center text-[#e8e5e5]  gap-6'>
 
                 <li className='bg-white text-gray-500  hover:border px-2 py-1 rounded-md'>
                    <Link href="/">Home</Link> 
@@ -62,9 +62,9 @@ export default function NavBar() {
             </ul>
         </div>
         {/* two */}
-        <Link href="/card" className='flex items-center gap-7 relative'>
-            <User color='white' size={35}/>
-            <ShoppingCart color='white' size={35} />
+        <Link href="/card" className='flex items-center gap-6 relative'>
+            <User color='white' size={20}/>
+            <ShoppingCart color='white' size={20} />
             <span className='absolute bg-[#EF4444] p-2 flex-1 text-xl right-14  -top-6 flex items-center justify-center w-7 h-7 text-white rounded-full'>{selectedCardIds.length}</span>
             <div>
               <ModeToggle/>
@@ -76,13 +76,13 @@ export default function NavBar() {
         <div className="hidden lg:flex items-center gap-3">
           <SignedOut>
             <SignInButton mode="modal">
-              <button className="px-4 py-1.5 rounded-full border border-white text-white hover:bg-white hover:text-black transition">
+              <button className="px-1.5 py-0.5 rounded-full border border-white text-white hover:bg-white hover:text-black transition">
                 Sign in
               </button>
             </SignInButton>
           
             <SignUpButton mode="modal">
-              <button className="px-4 py-1.5 rounded-full bg-amber-600 text-white hover:bg-amber-700 transition">
+              <button className="px-1.5 py-0.5 rounded-full bg-amber-600 text-white hover:bg-amber-700 transition">
                 Sign up
               </button>
             </SignUpButton>
@@ -98,9 +98,9 @@ export default function NavBar() {
       {/* visible on mobile */}
       <div className='lg:hidden flex items-center gap-6'>
         <RxHamburgerMenu color='white'  size={30} />
-        <span className='absolute bg-[#EF4444] p-2 flex-1 text-xl right-1  -top-5 flex items-center justify-center w-7 h-7 text-white rounded-full'>{selectedCardIds.length}</span>
+        <span className='absolute bg-[#EF4444] p-2 flex-1 text-xl right-1  -top-4 flex items-center justify-center w-7 h-7 text-white rounded-full'>{selectedCardIds.length}</span>
         <Link href="/card">
-          <ShoppingCart color='white' size={35} />
+          <ShoppingCart color='white' size={30} />
         </Link>
       </div>
       
