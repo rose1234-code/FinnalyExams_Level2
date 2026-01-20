@@ -2,7 +2,7 @@
 
 import AddCard from '@/components/AddCard'
 import Footer from '@/components/Footer'
-import Head from '@/components/Head'
+import NavBar from '@/components/NavBar'
 import { useStoreCard } from '@/store/card.store'
 import { X } from 'lucide-react'
 import Link from 'next/link'
@@ -70,11 +70,10 @@ export default function page() {
 
   return (
     <div>
-        <Head/>                             
-
+        <NavBar/>
         {/* head of description */}
         
-        <div className='flex flex-col lg:flex-row justify-between pt-34 lg:px-14  px-2'>
+        <div className='flex flex-col lg:flex-row bg-gray-50 justify-between pt-34 lg:px-14  px-2'>
 
           {/* first contenair */}
           <div className=' w-full lg:w-[63%] ring ring-gray-200 py-2 rounded-3xl '>

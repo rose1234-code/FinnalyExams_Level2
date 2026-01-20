@@ -1,8 +1,7 @@
 'use client'
 
-import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
-import { User,ShoppingCart } from 'lucide-react';
+import {ShoppingCart } from 'lucide-react';
 import { RxHamburgerMenu } from "react-icons/rx";
 import { ModeToggle } from './ModeToggle';
 import { useStoreCard } from '@/store/card.store';
@@ -14,6 +13,7 @@ import {
   SignedOut,
   UserButton,
 } from '@clerk/nextjs'
+import Link from 'next/link';
 
 export default function NavBar() {
 
@@ -33,7 +33,7 @@ export default function NavBar() {
   }
 }, [])
   return (
-    <div className={` ${scrolled? ' w-[96%] lg:w-[85%] left-3 lg:left-30 px-4 h-14 md:h-[67px] rounded-full':'w-full'} dark:bg-black flex transition duration-300 fixed left-0 px-2 lg:px-5 z-100 backdrop-blur-4xl bg-[#578f7c] text-black items-center justify-between  `}>
+    <div className={` ${scrolled? ' w-[96%] lg:w-[85%] left-3 lg:left-30 px-4 h-16 md:h-[67px] rounded-full':'w-full'} dark:bg-black flex transition duration-300 lg:h-[70px] top-2 fixed left-0 px-2 lg:px-5 z-100 backdrop-blur-4xl bg-[#578f7c] text-black items-center justify-between  `}>
         {/* first part */}
       <div className='flex items-center gap-1  '>
         <h1 className='text-4xl font-semibold text-white'>Furni</h1>
@@ -56,20 +56,19 @@ export default function NavBar() {
                    <Link href="#">Services</Link> 
                 </li>
                 <li className='hover:border px-2 py-1 rounded-md'>
-                   <Link href="#">Contact us</Link> 
+                   <Link href="/contact">Contact us</Link> 
                 </li>
                
             </ul>
         </div>
         {/* two */}
-        <Link href="/card" className='flex items-center gap-6 relative'>
-            <User color='white' size={20}/>
-            <ShoppingCart color='white' size={20} />
-            <span className='absolute bg-[#EF4444] p-2 flex-1 text-xl right-14  -top-6 flex items-center justify-center w-7 h-7 text-white rounded-full'>{selectedCardIds.length}</span>
+        <div  className='flex items-center gap-6 relative'>
+            <Link href="/card"><ShoppingCart color='white' size={20} /></Link>
+            <span className='absolute bg-[#EF4444] p-2 flex-1 text-xl right-12 -top-3 flex items-center justify-center w-6 h-6 text-white rounded-full'>{selectedCardIds.length}</span>
             <div>
               <ModeToggle/>
             </div>
-        </Link>
+        </div>
 
         {/* button of connexion */}
         {/* Auth buttons - Desktop */}

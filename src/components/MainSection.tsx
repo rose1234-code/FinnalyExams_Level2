@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function MainSection() {
   return (
-    <section className="w-full relative mt-5 flex flex-col md:flex-row items-center">
+    <section className="w-full relative pt-6 flex flex-col md:flex-row items-center">
 
       {/* Left */}
       <div className="w-full md:w-1/2 lg:[30%] space-y-5 md:space-y-7 pt-14 md:pt-24">

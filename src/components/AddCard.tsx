@@ -23,7 +23,7 @@ export default function AddCard ({id,image,price,name,onQtyChange}:AddCardProps)
 
 
   return (
-    <div className='h-[250px] w-full lg:pt-0  lg:px-14  lg:mb-6 rounded-3xl'>
+    <div className='h-[250px] w-full lg:pt-0 lg:px-14  lg:mb-6 rounded-3xl'>
        
 
         <div className="flex  h-full px-2 lg:px-8  gap-3 items-center  justify-between lg:gap-12 ring ring-gray-200 rounded-3xl">
